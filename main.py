@@ -4,7 +4,9 @@ if __name__ == '__main__':
 	board = f.start()
 	while(True):
 		f.show(board)
-		x = input('Enter a direction: ')
+		x = input('Enter a direction: ').lower()
+		while x not in ['w', 'a', 's', 'd']:
+			x = input('Invalid input. Enter a direction: ').lower()
 		f.move(board, x)
 		status = f.status(board)
 		if status == 0:
